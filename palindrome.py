@@ -8,4 +8,4 @@ def is_palindrome(value: str) -> bool:
     value = value.replace(" ", "").lower()
     return value == value[::-1]
 
-print(is_palindrome("bugatti"))
+print(is_palindrome("racecar"))

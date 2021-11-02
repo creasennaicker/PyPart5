@@ -2,15 +2,20 @@ from typing import List
 from math import ceil
 
 
-def get_item_at_position(list_in: List, pos: int) -> List:
+def get_item_at_position(list_in: List, pos: int) -> bool:
     """
     Returns the item at pos.
 
+    :type list_in: object
     :param list_in: Input list
     :param pos: Position of desired item in list_in
     :return: Item in pos
     """
-    pass  # remove pass statement and implement me
+    return list_in[pos]
+
+print(get_item_at_position(['Bicycle', 'Scooter', 'Motorcycle', 'Car', 'Jet ski', 'RV', 'Motorboat'],4))
+
+
 
 
 def print_list_items(list_in: List) -> None:
@@ -20,7 +25,11 @@ def print_list_items(list_in: List) -> None:
     :param list_in: Input list
     :return: None
     """
-    pass  # remove pass statement and implement me
+    list_in = list(list_in)
+    return list_in
+
+
+print(print_list_items('bugatti'))
 
 
 def sort_by_commit_count(list_in: List) -> List:
@@ -30,7 +39,10 @@ def sort_by_commit_count(list_in: List) -> List:
     :param list_in: A list where each entry is a list containing a name and the commit count corresponding to a user
     :return: The same list sorted in ascending order based on the commit count
     """
-    pass  # remove pass statement and implement me
+    name_list = sorted(list_in, key = lambda list_in: list_in[1])
+    return name_list
+
+print(sort_by_commit_count([['john','a'],['jane', 'b'], ['jawn', 'c']]))
 
 
 def gen_list_of_nums(n: int) -> List[int]:
@@ -40,7 +52,10 @@ def gen_list_of_nums(n: int) -> List[int]:
     :param n: The number of items the result should contain
     :return: A list of integers
     """
-    pass  # remove pass statement and implement me
+    new_list = list(range(0,n))
+    return new_list
+
+print(gen_list_of_nums(10))
 
 
 def half_list(list_in: List, half: int) -> List:
@@ -52,7 +67,10 @@ def half_list(list_in: List, half: int) -> List:
     If the length of list_in is an odd number, round the half value up (hint: math.ceil()).
     :return: A list.
     """
-    pass  # remove pass statement and implement me
+    half = len(list_in)//2
+    return list_in[:half], list_in[half:]
+
+print(half_list([1, 2, 3, 4, 5, 6],2))
 
 
 def remove_odds(list_in: List[int]) -> None:
@@ -61,8 +79,12 @@ def remove_odds(list_in: List[int]) -> None:
 
     :return: None
     """
-    pass  # remove pass statement and implement me
+    for item in list_in:
+        if item % 2 == 0:
+            list_in.remove(item)
+    print(list_in)
 
+remove_odds([1, 2, 3, 4, 5, 6])
 
 def remove_evens(list_in: List[int]) -> None:
     """
@@ -70,8 +92,12 @@ def remove_evens(list_in: List[int]) -> None:
 
     :return: None
     """
-    pass  # remove pass statement and implement me
+    for item in list_in:
+        if item % 2 != 0:
+            list_in.remove(item)
+    print(list_in)
 
+remove_evens([1, 2, 3, 4, 5, 6])
 
 def concatenate_lists(list_a: List, list_b: List) -> List:
     """
@@ -81,8 +107,10 @@ def concatenate_lists(list_a: List, list_b: List) -> List:
     :param list_b: Another list
     :return: A list containing all elements from list_a and list_b
     """
-    pass  # remove pass statement and implement me
+    new_list = list_a + list_b
+    return new_list
 
+print(concatenate_lists([1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6, 7]))
 
 def multiply_list(list_in: List, scalar: int) -> List:
     """
@@ -93,4 +121,9 @@ def multiply_list(list_in: List, scalar: int) -> List:
     :param scalar: An integer
     :return: A list
     """
-    pass  # remove pass statement and implement me
+
+    multi_list = list_in * scalar
+
+    return multi_list
+
+print(multiply_list([1, 2, 3, 4, 5, 6], 3))
